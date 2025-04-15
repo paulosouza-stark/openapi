@@ -8298,7 +8298,22 @@
               "readOnly": true
             },
             "log": {
-              "$ref": "#/components/schemas/BoletoLog"
+              "type": "object",
+              "readOnly": true,
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/BoletoLog"
+                },
+                {
+                  "$ref": "#/components/schemas/TransferLog"
+                },
+                {
+                  "$ref": "#/components/schemas/BoletoPaymentLog"
+                },
+                {
+                  "$ref": "#/components/schemas/UtilityPaymentLog"
+                }
+              ]
             }
           }
         },
